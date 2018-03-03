@@ -2,9 +2,18 @@ package vu.co.kaiyin.introjava.chapter1;
 
 public class Homework5 {
     public static void main(String[] args) {
-        double P1=4*(1.0-1.0/3+1.0/5-1.0/7+1.0/9-1.0/11);
-        double c1=4*(1.0-1.0/3+1.0/5-1.0/7+1.0/9-1.0/11);
-        double c2=4*(1.0-1.0/3+1.0/5-1.0/7+1.0/9-1.0/11+1.0/13);
-        System.out.println("c1");
+        double PI = calculatePI(1220);
+        System.out.println(PI);
+    }
+
+    public static double calculatePI(int n) {
+        double result = 0.0;
+        double sign = 1.0;
+        for(int i = 1; i <= n; i++) {
+            double x = (double)(2 * i - 1);
+            result +=  sign * 1.0/x;
+            sign *= -1.0;
+        }
+        return result * 4.0;
     }
 }
